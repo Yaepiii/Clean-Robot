@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+ <world name="default">
+    <scene>
+      <ambient>0.68 0.68 0.68 1.0</ambient>
+      <shadows> false</shadows>
+      <sky>
+        <sunrise/>
+        <clouds>
+          <speed>12</speed>
+      </clouds>
+      </sky>
+    </scene>
+
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://my_ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://test</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-0.153559 -0.442397 32.6183 3.14159 1.57079 3.14159</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>
